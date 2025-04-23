@@ -1,7 +1,6 @@
 package simulation.thread.animalLifecycleTask.task
 
 import field.Island
-import field.Location
 import lifeform.animal.Animal
 import java.util.concurrent.CountDownLatch
 
@@ -11,36 +10,32 @@ class AnimalMultiplyTask(private val latch: CountDownLatch) : Runnable {
 
     override fun run() {
         babies = 0
-        val animals: List<Animal> = Island.getInstance()
+        val animals = Island.getInstance()
             .getAllAnimals()
-            .filterNotNull()
-            .filter { it.isAlive }
+            .filter { it.isAlive && it.hasEaten }
 
-        val animalsMultiplied = mutableSetOf<Animal>()
+        val multiplied = mutableSetOf<Animal>()
 
-        for (currentAnimal in animals) {
-            if (currentAnimal !in animalsMultiplied) {
-                val location: Location = Island.getInstance().getLocation(currentAnimal.row, currentAnimal.column)
-                var locationAnimals = location.getAnimals()
+        for (animal in animals) {
+            if (animal !in multiplied) {
+                val location = Island.getInstance().getLocation(animal.row, animal.column)
+                val partners = location.getAnimals()
+                    .filter { it.name == animal.name && it != animal && it.hasEaten }
 
-                if (locationAnimals.size > 1) {
-                    locationAnimals = locationAnimals.filter { it.name == currentAnimal.name && it != currentAnimal }
-
-                    if (locationAnimals.isNotEmpty()) {
-                        val partner = locationAnimals[0]
-
-                        if (partner !in animalsMultiplied) {
-                            currentAnimal.multiply(partner)
-
-                            animalsMultiplied.add(currentAnimal)
-                            animalsMultiplied.add(partner)
-
-                            babies++
-                        }
+                if (partners.isNotEmpty()) {
+                    val partner = partners[0]
+                    if (partner !in multiplied) {
+                        animal.multiply(partner)
+                        multiplied.add(animal)
+                        multiplied.add(partner)
+                        babies++
                     }
                 }
             }
         }
+
+        multiplied.forEach { it.hasEaten = false }
+
         latch.countDown()
     }
 }

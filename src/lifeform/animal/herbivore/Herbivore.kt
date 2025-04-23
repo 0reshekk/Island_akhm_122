@@ -8,10 +8,11 @@ abstract class Herbivore(
     maxHp: Double,
     maxPopulation: Int,
     name: String
-) : Animal(weight, step, maxHp, maxPopulation, name) {
+) : Animal(weight, step, maxHp, maxPopulation, name)
 
-    override fun getChanceToEat(foodName: String): Double = when (foodName) {
-        "Растения" -> 1.0
-        else -> 0.0
-    }
-}
+//{
+//    override fun getChanceToEat(foodName: String): Double = when (foodName) {
+//        "Растения" -> 1.0
+//        else -> 0.0
+//    }
+//}

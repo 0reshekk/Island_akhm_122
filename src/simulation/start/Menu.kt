@@ -9,7 +9,7 @@ class Menu {
 
     fun startSimulation() {
         println("----------------------------------\nХотите ли вы внести свои параметры перед началом симуляции?")
-        println("1. Да\n2. Нет\nВведите номер режима: ")
+        print("1. Да\n2. Нет\nВведите номер режима: ")
         val answer = parameters.takeInt(1, 2)
 
         if (answer == 1) {

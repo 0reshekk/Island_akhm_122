@@ -39,19 +39,23 @@ class Island private constructor() {
 
     fun addAnimal(animal: Animal, row: Int, column: Int) {
         getLocation(row, column).addAnimal(animal)
+        animal.setPosition(row, column)
     }
 
     fun removeAnimal(animal: Animal, row: Int, column: Int) {
         getLocation(row, column).removeAnimal(animal)
+        animal.setPosition(row, column)
     }
 
     fun addPlant(plant: Plant, row: Int, column: Int) {
         getLocation(row, column).addPlant(plant)
+        plant.setPosition(row, column)
     }
 
     fun removePlant(plant: Plant, row: Int, column: Int) {
         getLocation(row, column).removePlant(plant)
     }
+
 
     @Synchronized
     fun getAllAnimals(): List<Animal> {

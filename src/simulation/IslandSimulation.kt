@@ -12,18 +12,14 @@ import java.util.concurrent.*
 import kotlin.collections.ArrayList
 
 class IslandSimulation private constructor() {
-    private val startTime: Long
-    private val countHerbivores = 10
-    private val countPlants = 15
-    private val countPredators = 5
+    private val startTime: Long = System.currentTimeMillis()
+    private val countPredators = 50
+    private val countHerbivores = 100
+    private val countPlants = 250
 
     @Volatile
     var executorService: ScheduledExecutorService? = null
         private set
-
-    init {
-        startTime = System.currentTimeMillis()
-    }
 
     private fun runIslandModel() {
         executorService = Executors.newScheduledThreadPool(3)

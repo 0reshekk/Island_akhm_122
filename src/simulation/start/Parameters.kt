@@ -27,12 +27,12 @@ class Parameters {
 
     private fun changeIslandSize() {
         println("Хотите ли вы изменить размер острова (10x4)?")
-        println("1. Да\n2. Нет\nВведите номер режима: ")
+        print("1. Да\n2. Нет\nВведите номер режима: ")
         val answer = takeInt(1, 2)
         if (answer == 1) {
-            println("Введите желаемый размер острова\nКоличество строк:")
+            print("Введите желаемый размер острова\nКоличество строк от 1 до 500: ")
             val rows = takeInt(1, 500)
-            println("Количество столбцов:")
+            print("Количество столбцов от 1 до 500: ")
             val columns = takeInt(1, 500)
             Island.getInstance().initializeLocations(rows, columns)
         } else {
@@ -41,37 +41,37 @@ class Parameters {
     }
 
     private fun changePredatorsSize(): Int {
-        println("Хотите ли вы изменить количество хищников (25)?")
-        println("1. Да\n2. Нет\nВведите номер режима: ")
+        println("Хотите ли вы изменить количество хищников (50)?")
+        print("1. Да\n2. Нет\nВведите номер режима: ")
         var countPredators = 0
         val answer = takeInt(1, 2)
         if (answer == 1) {
-            println("Введите желаемое количество хищников от 5 до 500!\nКоличество хищников:")
+            print("Введите желаемое количество хищников от 5 до 500!\nКоличество хищников: ")
             countPredators = takeInt(5, 500)
         }
         return countPredators
     }
 
     private fun changeHerbivoresSize(): Int {
-        println("Хотите ли вы изменить количество травоядных (30)?")
-        println("1. Да\n2. Нет\nВведите номер режима: ")
+        println("Хотите ли вы изменить количество травоядных (100)?")
+        print("1. Да\n2. Нет\nВведите номер режима: ")
         var countHerbivores = 0
         val answer = takeInt(1, 2)
         if (answer == 1) {
-            println("Введите желаемое количество травоядных от 10 до 500!\nКоличество травоядных:")
+            print("Введите желаемое количество травоядных от 10 до 500!\nКоличество травоядных: ")
             countHerbivores = takeInt(10, 500)
         }
         return countHerbivores
     }
 
     private fun changePlantsSize(): Int {
-        println("Хотите ли вы изменить количество растений (10)?")
-        println("1. Да\n2. Нет\nВведите номер режима: ")
+        println("Хотите ли вы изменить количество растений (250)?")
+        print("1. Да\n2. Нет\nВведите номер режима: ")
         var countPlants = 0
         val answer = takeInt(1, 2)
         if (answer == 1) {
-            println("Введите желаемое количество растений от 1 до 500!\nКоличество растений:")
-            countPlants = takeInt(1, 500)
+            print("Введите желаемое количество растений от 10 до 500!\nКоличество растений: ")
+            countPlants = takeInt(10, 500)
         }
         return countPlants
     }
@@ -84,11 +84,11 @@ class Parameters {
                 if (number in lowNum..highNum) {
                     return number
                 } else {
-                    println("Ошибка! Введенное число не находится в заданном диапазоне. Попробуйте еще раз")
+                    print("Ошибка! Введенное число не находится в заданном диапазоне.\nВведите значение еще раз: ")
                 }
             } else {
                 scanner.next()
-                println("Ошибка! Введено некорректное значение. Попробуйте еще раз")
+                print("Ошибка! Введено некорректное значение.\nВведите значение еще раз: ")
             }
         }
     }

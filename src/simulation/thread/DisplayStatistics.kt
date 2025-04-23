@@ -45,7 +45,7 @@ class DisplayStatisticsTask : Runnable {
         val animals = island.getAllAnimals()
         val plantsCount = island.getAllPlants().size
 
-        val aliveAnimals = animals.filterNotNull().filter { it.isAlive }
+        val aliveAnimals = animals.filter { it.isAlive }
 
         val animalOrder = listOf(
             "Медведь",
@@ -72,7 +72,7 @@ class DisplayStatisticsTask : Runnable {
             if (count > 0) "$name: $count" else null
         }
 
-        val emojiGrid = buildEmojiGrid(animals.filterNotNull(), plantsCount, 20)
+        val emojiGrid = buildEmojiGrid(animals, plantsCount, 60)
 
         val stats = """
         |==================== СТАТИСТИКА: ДЕНЬ $currentDay ====================
@@ -110,7 +110,7 @@ class DisplayStatisticsTask : Runnable {
         )
 
         val plantEmojis = List(plantsCount.coerceAtMost(100)) { plantEmoji }
-        val aliveAnimals = animals.filterNotNull().filter { it.isAlive }
+        val aliveAnimals = animals.filter { it.isAlive }
         val animalEmojis = aliveAnimals.map { animalEmojiMap[it.name] ?: " " }
         val allEmojis = plantEmojis + animalEmojis
 

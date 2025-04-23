@@ -11,19 +11,16 @@ class Rabbit : Herbivore(
     name = "Кролик"
 ) {
     override fun getChanceToEat(foodName: String): Double = when (foodName) {
-        "Растения" -> 1.0
-        "Гусеница" -> 0.4
+        "Растения" -> 0.8
+        "Гусеница" -> 0.5
         else -> 0.0
     }
 
     override fun multiply(partner: Animal) {
         if (partner is Rabbit) {
-            val island = Island.getInstance()
-            val currentPopulation = island.getAllAnimals().count { it.name == "Кролик" && it.isAlive }
-            if (currentPopulation < maxPopulation) {
-                val location = island.getLocation(partner.row, partner.column)
-                island.addAnimal(Rabbit(), location.row, location.column)
-            }
+            val location = Island.getInstance().getLocation(partner.row, partner.column)
+            Island.getInstance().addAnimal(Mouse(), location.row, location.column)
         }
     }
+
 }

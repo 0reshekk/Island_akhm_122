@@ -11,7 +11,7 @@ class Buffalo : Herbivore(
     name = "Буйвол"
 ) {
     override fun getChanceToEat(foodName: String): Double = when (foodName) {
-        "Растения" -> 1.0
+        "Растения" -> 0.8
         else -> 0.0
     }
 

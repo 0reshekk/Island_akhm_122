@@ -7,7 +7,6 @@ class AnimalMoveTask : Runnable {
     override fun run() {
         val animals = Island.getInstance()
             .getAllAnimals()
-            .filterNotNull()
             .filter { it.isAlive && it.step > 0 }
 
         for (animal in animals) {

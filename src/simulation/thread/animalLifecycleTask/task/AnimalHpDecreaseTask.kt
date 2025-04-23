@@ -7,19 +7,17 @@ import simulation.IslandSimulation
 import java.util.concurrent.CountDownLatch
 
 class AnimalHpDecreaseTask(private val latch: CountDownLatch) : Runnable {
-    private var percentOfHpToDecrease = 15.0
-    var animalsDiedByHungry: Int = 0
-        private set
+    private var percentOfHpToDecrease = 10.0
+    private var animalsDiedByHungry: Int = 0
 
     override fun run() {
         animalsDiedByHungry = 0
         val animals: List<Animal> = Island.getInstance()
             .getAllAnimals()
-            .filterNotNull()
             .filter { it.isAlive && it.maxHp > 0 }
 
-        // Увеличиваем голод через 3 минуты симуляции
-        if (IslandSimulation.getInstance().getTimeNow() / 60 >= 3) {
+        // Увеличиваем голод через 4 минуты симуляции
+        if (IslandSimulation.getInstance().getTimeNow() / 60 >= 4) {
             percentOfHpToDecrease = 30.0 // удвоение
         }
 
