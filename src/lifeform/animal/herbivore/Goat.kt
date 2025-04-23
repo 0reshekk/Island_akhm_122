@@ -4,10 +4,10 @@ import field.Island
 import lifeform.animal.Animal
 
 class Goat : Herbivore(
-    weight = 5.0,
-    step = 2,
+    weight = 60.0,
+    step = 3,
     maxHp = 4.0,
-    maxPopulation = 70,
+    maxPopulation = 140,
     name = "Коза"
 ) {
     override fun getChanceToEat(foodName: String): Double = when (foodName) {

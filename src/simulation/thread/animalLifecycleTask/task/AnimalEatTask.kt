@@ -28,7 +28,9 @@ class AnimalEatTask(private val latch: CountDownLatch) : Runnable {
                 for (lifeForm in lifeForms) {
                     if (animal.getChanceToEat(lifeForm.name) > 0 && lifeForm !in eatenLifeForms) {
                         val isEaten = animal.eat(lifeForm)
+
                         //println("${animal.name} пытается съесть ${lifeForm.name}: ${if (isEaten) "Успешно" else "Неудачно"}")
+
                         if (isEaten) {
                             eatenLifeForms.add(lifeForm)
                             animalsEaten++

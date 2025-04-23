@@ -1,7 +1,6 @@
 package simulation.thread.animalLifecycleTask.task
 
 import field.Island
-import lifeform.animal.Animal
 
 class AnimalMoveTask : Runnable {
     override fun run() {

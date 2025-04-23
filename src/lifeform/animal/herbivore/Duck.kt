@@ -4,10 +4,10 @@ import field.Island
 import lifeform.animal.Animal
 
 class Duck : Herbivore(
-    weight = 1.5,
-    step = 2,
+    weight = 1.0,
+    step = 4,
     maxHp = 2.0,
-    maxPopulation = 120,
+    maxPopulation = 200,
     name = "Утка"
 ) {
     override fun getChanceToEat(foodName: String): Double = when (foodName) {

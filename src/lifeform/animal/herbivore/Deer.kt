@@ -4,8 +4,8 @@ import field.Island
 import lifeform.animal.Animal
 
 class Deer : Herbivore(
-    weight = 150.0,
-    step = 3,
+    weight = 300.0,
+    step = 4,
     maxHp = 10.0,
     maxPopulation = 20,
     name = "Олень"

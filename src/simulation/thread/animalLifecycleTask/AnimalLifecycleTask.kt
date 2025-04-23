@@ -26,10 +26,10 @@ class AnimalLifecycleTask : Runnable {
         try {
             val completed = latch.await(10, TimeUnit.SECONDS)
             if (!completed) {
-                println("Предупреждение: Не все задачи завершились за отведённое время!")
+                println("Предупреждение: Не все задачи завершились!")
             }
         } catch (e: InterruptedException) {
-            println("Ждём задачи прервано: ${e.message}")
+            println("Задачи прерваны: ${e.message}")
             Thread.currentThread().interrupt()
         }
 

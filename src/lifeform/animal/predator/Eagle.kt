@@ -4,8 +4,8 @@ import field.Island
 import lifeform.animal.Animal
 
 class Eagle : Predator(
-    weight = 5.0,
-    step = 4,
+    weight = 6.0,
+    step = 3,
     maxHp = 3.0,
     maxPopulation = 20,
     name = "Орел"

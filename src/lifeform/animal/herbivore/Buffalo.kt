@@ -5,9 +5,9 @@ import lifeform.animal.Animal
 
 class Buffalo : Herbivore(
     weight = 700.0,
-    step = 2,
+    step = 3,
     maxHp = 15.0,
-    maxPopulation = 20,
+    maxPopulation = 10,
     name = "Буйвол"
 ) {
     override fun getChanceToEat(foodName: String): Double = when (foodName) {

@@ -5,7 +5,7 @@ import lifeform.animal.Animal
 
 class Caterpillar : Herbivore(
     weight = 0.01,
-    step = 1,
+    step = 0,
     maxHp = 0.01,
     maxPopulation = 1000,
     name = "Гусеница"

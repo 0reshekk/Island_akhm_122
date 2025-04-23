@@ -4,8 +4,8 @@ import field.Island
 import lifeform.animal.Animal
 
 class Sheep : Herbivore(
-    weight = 7.0,
-    step = 2,
+    weight = 70.0,
+    step = 3,
     maxHp = 5.0,
     maxPopulation = 140,
     name = "Овца"

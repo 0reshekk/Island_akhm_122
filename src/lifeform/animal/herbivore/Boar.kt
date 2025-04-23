@@ -4,7 +4,7 @@ import field.Island
 import lifeform.animal.Animal
 
 class Boar : Herbivore(
-    weight = 15.0,
+    weight = 400.0,
     step = 2,
     maxHp = 6.0,
     maxPopulation = 50,

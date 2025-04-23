@@ -5,8 +5,7 @@ import lifeform.animal.Animal
 import java.util.concurrent.CountDownLatch
 
 class AnimalMultiplyTask(private val latch: CountDownLatch) : Runnable {
-    var babies: Int = 0
-        private set
+    private var babies: Int = 0
 
     override fun run() {
         babies = 0

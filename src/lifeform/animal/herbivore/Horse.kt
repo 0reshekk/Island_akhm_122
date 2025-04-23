@@ -4,7 +4,7 @@ import field.Island
 import lifeform.animal.Animal
 
 class Horse : Herbivore(
-    weight = 30.0,
+    weight = 400.0,
     step = 4,
     maxHp = 10.0,
     maxPopulation = 20,

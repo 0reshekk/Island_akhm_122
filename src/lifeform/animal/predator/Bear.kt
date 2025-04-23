@@ -4,10 +4,10 @@ import field.Island
 import lifeform.animal.Animal
 
 class Bear : Predator(
-    weight = 70.0,
+    weight = 500.0,
     step = 2,
     maxHp = 12.0,
-    maxPopulation = 15,
+    maxPopulation = 5,
     name = "Медведь"
 ) {
     override fun getChanceToEat(foodName: String): Double = when (foodName) {

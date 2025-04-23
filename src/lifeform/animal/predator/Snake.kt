@@ -5,9 +5,9 @@ import lifeform.animal.Animal
 
 class Snake : Predator(
     weight = 15.0,
-    step = 2,
+    step = 1,
     maxHp = 5.0,
-    maxPopulation = 20,
+    maxPopulation = 30,
     name = "Удав"
 ) {
     override fun getChanceToEat(foodName: String): Double = when (foodName) {

@@ -5,7 +5,7 @@ import lifeform.animal.Animal
 
 class Fox : Predator(
     weight = 8.0,
-    step = 3,
+    step = 2,
     maxHp = 4.0,
     maxPopulation = 30,
     name = "Лиса"
